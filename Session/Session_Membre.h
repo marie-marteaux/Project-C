@@ -14,6 +14,7 @@ private :
     Membre personne;
 public :
     void Consulter_fiche_asso();
+    void setMembre(Membre pPersonne);
 };
 
 
