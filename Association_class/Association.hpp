@@ -4,7 +4,7 @@
 /*!
  * \file Association.hpp
  * \brief Définition d'une association
- * \author Moi
+ * \author Groupe A4
  * \version 0.1
  */
 
