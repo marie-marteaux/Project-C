@@ -6,8 +6,8 @@
 #define PROJET_C_SESSION_H
 
 /*!
- * \file Association.hpp
- * \brief Définition d'une association
+ * \file Session.hpp
+ * \brief Définition d'une session
  * \author Groupe A4
  * \version 0.1
  */
@@ -16,9 +16,9 @@
 #include <string>
 
 /*!
- * \Class Association
- * \brief Cette classe défini une association
- * Elle contient un certain nombre de renseignements sur l'association (Nom, lieu du siège...)
+ * \Class Session
+ * \brief Cette classe défini une session
+ * Cette classe contient les inforamtion de conenction et ne sera jamais implémenter en tant que tel
  */
 
 class Session {
@@ -27,8 +27,8 @@ private:
     std::string Pass;
 public:
     /*!
-     * \brief Constructeur de la classe association
-     * Crée une association "vide", avec aucune information
+     * \brief Permet de se connecter à sa session
+     * Renvoie un booléen décrivant si la connection peut s'établir
      */
     bool Connection();
 };

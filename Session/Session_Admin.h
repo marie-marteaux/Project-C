@@ -6,8 +6,8 @@
 #define PROJET_C_SESSION_ADMIN_H
 
 /*!
- * \file Association.hpp
- * \brief Définition d'une association
+ * \file Session_Admin.hpp
+ * \brief Définition de la session administrateur
  * \author Groupe A4
  * \version 0.1
  */
@@ -19,26 +19,26 @@
 #include "Personne.h"
 
 /*!
- * \Class Association
- * \brief Cette classe défini une association
- * Elle contient un certain nombre de renseignements sur l'association (Nom, lieu du siège...)
+ * \Class Session_Admin
+ * \brief Cette classe défini les session administrateur
+ * Les session administrateurs sont celles qui vont permettre de gérer l'application
  */
 
 class Session_Admin : public Session_Membre{
 public:
     /*!
-     * \brief Constructeur de la classe association
-     * Crée une association "vide", avec aucune information
+     * \ Méthode Entrer_données
+     * Permet d'entrer les donnees à partir d'un fichier dont on entre le chemin
      */
     void Entrer_donnees(std::string path);
     /*!
-     * \brief Constructeur de la classe association
-     * Crée une association "vide", avec aucune information
+     * \brief Affiche une fiche
+     * Affiche la fiche du membre ciblé
      */
     void Consulter_fiche(Personne pMembre);
     /*!
-     * \brief Constructeur de la classe association
-     * Crée une association "vide", avec aucune information
+     * \brief Permet l'ajout d'administrateur
+     * permet de changer la session choisie en session administrateur
      */
     void Ajouter_admin(Session pSession);
 };

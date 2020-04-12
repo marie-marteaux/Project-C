@@ -6,8 +6,8 @@
 #define PROJET_C_SESSION_MEMBRE_H
 
 /*!
- * \file Association.hpp
- * \brief Définition d'une association
+ * \file Session_membre.hpp
+ * \brief Définition d'une session d'un membre
  * \author Groupe A4
  * \version 0.1
  */
@@ -17,9 +17,9 @@
 #include "Session_Consultant.h"
 
 /*!
- * \Class Association
- * \brief Cette classe défini une association
- * Elle contient un certain nombre de renseignements sur l'association (Nom, lieu du siège...)
+ * \Class Session_membre
+ * \brief Définition d'une session d'un membre
+ * Elle permet aux membres de cunsulter leur fiche ainsi que celle de l'association et donc hérite de session consultant
  */
 
 class Session_Membre ; public {
@@ -27,13 +27,13 @@ private :
     Membre personne;
 public:
 /*!
-* \brief Constructeur de la classe association
-* Crée une association "vide", avec aucune information
+* \brief affiche la fiche asso
+* permet de consulter la fiche de l'association
 */
     void Consulter_fiche_asso();
 /*!
-* \brief Constructeur de la classe association
-* Crée une association "vide", avec aucune information
+* \brief Setter pour l'attribut personne
+* permet de renseigner le memebre associé à la session
 */
     void setMembre(Membre pPersonne);
 };
