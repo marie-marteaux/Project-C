@@ -20,6 +20,10 @@
 
 class TestAssociation {
 
+public:
+    void testAssociation(str,str,int,vector<Membre>,vector<Consultant>);
+    void testAjouterMembre(Personne);
+    void testSupprimerMembre(Personne);
 };
 
 
