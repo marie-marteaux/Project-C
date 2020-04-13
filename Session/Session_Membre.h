@@ -26,6 +26,11 @@ class Session_Membre ; public {
 private :
     Membre personne;
 public:
+    void setMembre(const Personne);
+    Personne getMembre() const;
+    Session_Membre();
+    Session_Membre(const Personne);
+    virtual ~Session_Mebre();
 /*!
 * \brief affiche la fiche asso
 * permet de consulter la fiche de l'association

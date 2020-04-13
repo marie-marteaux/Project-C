@@ -18,7 +18,7 @@
 /*!
  * \Class Session
  * \brief Cette classe défini une session
- * Cette classe contient les inforamtion de conenction et ne sera jamais implémenter en tant que tel
+ * Cette classe contient les information de connection et ne sera jamais implémenter en tant que tel
  */
 
 class Session {
@@ -26,6 +26,11 @@ private:
     std::string ID;
     std::string Pass;
 public:
+    void setID();
+    void setPass();
+    std::string getID();
+    std::string getPass();
+
     /*!
      * \brief Permet de se connecter à sa session
      * Renvoie un booléen décrivant si la connection peut s'établir

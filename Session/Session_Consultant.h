@@ -16,6 +16,7 @@
 #include <string>
 #include "Session.h"
 #include "Consultant.h"
+#include "Personne.hpp"
 
 /*!
  * \Class Session_Consultant
@@ -25,6 +26,12 @@
 
 class Session_Consultant : public Session {
 public:
+    void setConsultant(const Personne);
+    Personne getConsultant() const;
+    Session_Consultant();
+    Session_Consultant(const Personne);
+    virtual ~Session_Consultant();
+
     /*!
     * \brief Consulter_fiche affiche une fiche
     * Permet d'afficher la fiche du membre à qui appartient la session
