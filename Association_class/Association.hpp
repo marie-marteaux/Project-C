@@ -1,5 +1,5 @@
 #ifndef ASSOCIATION_H
-#ifdefine ASSOCIATION_H
+#define ASSOCIATION_H
 
 /*!
  * \file Association.hpp
@@ -8,8 +8,10 @@
  * \version 0.1
  */
 
+#include <string>
 #include <vector>
-#include "Personne.hpp"
+#include "Membre.h"
+#include "Consultant.h"
 
 /*!
  * \Class Association
@@ -19,11 +21,11 @@
 
 class Association {
 private:
-    str Nom;
-    str Lieu;
+    std::string Nom;
+    std::string Lieu;
     int Nombre_Membres;
-    vector<Membre> Membres;
-    vector<Consultant> Consultants;
+    std::vector<Membre> Membres;
+    std::vector<Consultant> Consultants;
 
 
 public:
@@ -37,13 +39,13 @@ public:
      * \brief Constructeur de la classe association
      * Crée une association ayant un nom mais aucune autre information
      */
-    Association(str);
+    Association(std::string);
 
     /*!
      * \brief Constructeur de la classe association
      * Crée une association pour laquelle on connait le nom, le lieu du siège et les membres
      */
-    Association(str,str,int,vector<Membre>,vector<Consultant>);
+    Association(std::string,std::string,int,std::vector<Membre>,std::vector<Consultant>);
 
     /*!
      * \brief Destructeur de la classe association
@@ -53,22 +55,22 @@ public:
     /*!
      * \brief Permet d'obtenir le nom d'une association
      */
-    str getNom() const;
+    std::string getNom() const;
 
     /*!
      * \brief Permet de modifier le nom d'une association
      */
-    str setNom();
+    std::string setNom();
 
     /*!
      * \brief Permet d'obtenir le lieu du siège de l'association
      */
-    str getLieu() const;
+    std::string getLieu() const;
 
     /*!
      * \brief Permet de modifier le lieu d'une association
      */
-    str setLieu();
+    std::string setLieu();
 
     /*!
  * \brief Permet d'obtenir le nombre de membres de l'association
@@ -78,12 +80,12 @@ public:
     /*!
      * \brief Permet d'obtenir la liste des membres de l'association
      */
-    vector<Membre> getMembres() const;
+    std::vector<Membre> getMembres() const;
 
     /*!
      * \brief Permet d'ajouter un membre dans l'association
      */
-    void ajouterMembre(const Personne);
+    void ajouterMembre(const Membre);
 
     /*!
      * \brief Permet de supprimer un membre de l'association
