@@ -13,6 +13,8 @@
 #include "Membre.h"
 #include "Consultant.h"
 
+using namespace std;
+
 /*!
  * \Class Association
  * \brief Cette classe défini une association
@@ -21,11 +23,10 @@
 
 class Association {
 private:
-    std::string Nom;
-    std::string Lieu;
-    int Nombre_Membres;
-    std::vector<Membre> Membres;
-    std::vector<Consultant> Consultants;
+    string nom;
+    string lieu;
+    vector<Membre*> membres;
+    vector<Consultant> consultants;
 
 
 public:
@@ -39,13 +40,13 @@ public:
      * \brief Constructeur de la classe association
      * Crée une association ayant un nom mais aucune autre information
      */
-    Association(std::string);
+    Association(string p_nom);
 
     /*!
      * \brief Constructeur de la classe association
      * Crée une association pour laquelle on connait le nom, le lieu du siège et les membres
      */
-    Association(std::string,std::string,int,std::vector<Membre>,std::vector<Consultant>);
+    Association(string p_nom, string p_lieu);
 
     /*!
      * \brief Destructeur de la classe association
@@ -55,42 +56,47 @@ public:
     /*!
      * \brief Permet d'obtenir le nom d'une association
      */
-    std::string getNom() const;
+    string getNom() const;
 
     /*!
      * \brief Permet de modifier le nom d'une association
      */
-    std::string setNom();
+    string setNom(string p_nom);
 
     /*!
      * \brief Permet d'obtenir le lieu du siège de l'association
      */
-    std::string getLieu() const;
+    string getLieu() const;
 
     /*!
      * \brief Permet de modifier le lieu d'une association
      */
-    std::string setLieu();
+    string setLieu(string p_lieu);
 
     /*!
- * \brief Permet d'obtenir le nombre de membres de l'association
- */
+    * \brief Permet d'obtenir le nombre de membres de l'association
+    */
     int getNombre_Membres() const;
 
     /*!
      * \brief Permet d'obtenir la liste des membres de l'association
      */
-    std::vector<Membre> getMembres() const;
+    vector<Membre*> getMembres() const;
+
+    /*!
+     * \brief Permet d'obtenir la liste des membres de l'association
+     */
+    vector<Membre*> setMembres(vector<Membre*> p_listeMembres) const;
 
     /*!
      * \brief Permet d'ajouter un membre dans l'association
      */
-    void ajouterMembre(const Membre);
+    void ajouterMembre(const Membre* p_membre);
 
     /*!
      * \brief Permet de supprimer un membre de l'association
      */
-    void supprimerMembre(Personne);
+    void supprimerMembre(Membre* p_membre);
 
 };
 

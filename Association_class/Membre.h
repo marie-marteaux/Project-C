@@ -10,6 +10,8 @@
 #include <list>
 #include "Personne.hpp"
 
+using namespace std;
+
 /*! \class Membre
    * \brief classe representant la personne membre dans une association
    *
@@ -17,8 +19,7 @@
    */
 
 class Membre : private Personne {
-    std::list<std::string> liste_Attribut; /*!< Liste des attributs*/
-    std::string pole;/*!< definition de type de pole*/
+    string pole;/*!< definition de type de pole*/
 
 public:
     /*!
@@ -35,7 +36,7 @@ public:
     *
     *  \param p : nom du pole
     */
-    Membre(std::string p);
+    Membre(string p_pole);
 
     /*!
     *  \brief Constructeur
@@ -45,8 +46,10 @@ public:
     *  \param p : nom du pole
     *  \param LA : liste des attributs
     */
-    Membre(std::list<std::string> LA, std::string p);
+    Membre( string p_pole, string p_nom, string p_prenom );
 
+    Membre( string p_pole, string p_nom, string p_prenom, int p_age, string p_adresse,
+            string p_mail, int p_annee, string p_departement );
     /*!
      *  \brief Destructeur
      *
@@ -80,7 +83,7 @@ public:
      *
      *  \return un std::list<string qui est la liste des attribus du consultant
      */
-    std::list<std::string> getAttribut() const;
+//    std::list<std::string> getAttribut() const;
 
 };
 
