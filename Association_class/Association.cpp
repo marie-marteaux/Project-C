@@ -31,7 +31,7 @@ string Association::setNom(string p_nom){
 };
 
 string Association::getLieu() const{
-    return "";
+    return lieu;
 };
 
 
@@ -43,18 +43,20 @@ int Association::getNombre_Membres() const{
     return membres.size();
 };
 
-vector<Membre*> Association::getMembres() const{
+vector<Membre> Association::getMembres() const{
 
 };
 
-vector<Membre*> Association::setMembres(vector<Membre*> listeMembres) const{
-
+vector<Membre> Association::setMembres(vector<Membre> listeMembres) {
+    membres = listeMembres;
+    return membres;
+//    copy(listeMembres.begin(), listeMembres.end(), back_inserter(membres));
 };
 
-void Association::ajouterMembre(const Membre*){
-
+void Association::ajouterMembre(const Membre p_membre){
+    membres.push_back( p_membre );
 };
 
-void Association::supprimerMembre(Membre* membre){
+void Association::supprimerMembre(Membre membre){
 
 };

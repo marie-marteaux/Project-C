@@ -14,7 +14,7 @@
 */
 
 class Personne {   
-	private:         
+	protected:
 		std::string nom;
 		std::string prenom;
 		int age;

@@ -7,7 +7,16 @@
 */
 using namespace std;
 
+TestAssociation::TestAssociation(){
+
+};
+
 // ----------------------------------------------
+
+TestAssociation::~TestAssociation(){
+
+};
+
 
 /**
  * setUp: function called before each test
@@ -16,8 +25,8 @@ void TestAssociation::setUp() {
     nom = "AJIR";
     lieu = "INSA Rouen";
 
-    vm.push_back( new Membre( "Devco", "Fiche", "Guenole") );
-    vm.push_back(  new Membre( "Com", "Hartmann", "Constance") );
+    vm.push_back(  Membre( "Devco", "Fiche", "Guenole") );
+    vm.push_back(  Membre( "Com", "Hartmann", "Constance") );
 }
 
 /**
@@ -49,14 +58,14 @@ void TestAssociation::test_Association() {
 void TestAssociation::test_ajouterMembre() {
     Association * ajir = new Association( nom, lieu );
     ajir->setMembres( vm );
-    ajir->ajouterMembre( new Membre( "Devco", "Marsot", "Corentin"));
+    ajir->ajouterMembre( Membre( "Devco", "Marsot", "Corentin"));
     CPPUNIT_ASSERT(ajir->getNombre_Membres() == 3);
 }
 
 void TestAssociation::test_supprimerMembre() {
     Association * ajir = new Association( nom, lieu );
     ajir->setMembres( vm );
-    ajir->supprimerMembre( new Membre( "Devco", "Fiche", "Guenole"));
+    ajir->supprimerMembre( Membre( "Devco", "Fiche", "Guenole"));
     CPPUNIT_ASSERT(ajir->getNombre_Membres() == 1);
 }
 
@@ -72,7 +81,7 @@ void TestAssociation::test_fail() {
  * declare suite of tests
  *
  */
-CppUnit::TestSuite *make_suite() {
+CppUnit::TestSuite * TestAssociation::make_suite() {
     CppUnit::TestSuite *suite = new CppUnit::TestSuite(CLASS_NAME_STRING);
     cout << "==============================================" << endl;
     cout << "TEST " << suite->getName() << " (" << __FILE__ << ")" << endl;
@@ -89,6 +98,7 @@ CppUnit::TestSuite *make_suite() {
 /**
  * main function
  */
+ /*
 int main(int argc, char *argv[]) {
     CppUnit::TextUi::TestRunner runner;
 
@@ -104,3 +114,4 @@ int main(int argc, char *argv[]) {
 
      return 0;
 }
+  */

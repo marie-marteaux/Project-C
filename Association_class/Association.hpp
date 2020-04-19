@@ -25,7 +25,7 @@ class Association {
 private:
     string nom;
     string lieu;
-    vector<Membre*> membres;
+    vector<Membre> membres;
     vector<Consultant> consultants;
 
 
@@ -81,22 +81,22 @@ public:
     /*!
      * \brief Permet d'obtenir la liste des membres de l'association
      */
-    vector<Membre*> getMembres() const;
+    vector<Membre> getMembres() const;
 
     /*!
      * \brief Permet d'obtenir la liste des membres de l'association
      */
-    vector<Membre*> setMembres(vector<Membre*> p_listeMembres) const;
+    vector<Membre> setMembres(vector<Membre> p_listeMembres);
 
     /*!
      * \brief Permet d'ajouter un membre dans l'association
      */
-    void ajouterMembre(const Membre* p_membre);
+    void ajouterMembre(Membre p_membre);
 
     /*!
      * \brief Permet de supprimer un membre de l'association
      */
-    void supprimerMembre(Membre* p_membre);
+    void supprimerMembre(Membre p_membre);
 
 };
 
