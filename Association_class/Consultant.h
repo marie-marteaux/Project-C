@@ -9,6 +9,7 @@
 #include <string>
 #include <list>
 #include "Personne.hpp"
+using namespace std;
 
 /*! \class Consultant
    * \brief classe representant la personne consultant dans une association
@@ -16,12 +17,11 @@
    *  La classe est heritee de la classe Personne qui definit plus prondement les attributs d une personne 
    */
 class Consultant : private Personne {
-    std::list<std::string> liste_Attribut; /*!< Liste des attributs*/
-    static std::string pole = "Consultant";
+    static string pole;
 /*!< definition de type de pole*/
 /*! * \brief il s agit d un attribut static puisque qu il sera consultant peut importe sa mission
    */
-    std::string mission;/*!< Nom de la mission en cours*/
+    string mission;/*!< Nom de la mission en cours*/
 
 public:
     /*!
@@ -38,7 +38,7 @@ public:
     *
     *  \param m : nom de la mission en cours
     */
-    Consultant(std::string m);
+    Consultant(string m_mission);
 
     /*!
     *  \brief Constructeur
@@ -48,8 +48,8 @@ public:
     *  \param m : nom de la mission en cours
     *  \param lAttribut : liste des attributs
     */
-    Consultant(std::list<std::string> lAttribut, std::string m);
-
+    Consultant(string m_mission, string p_nom, string p_prenom );
+    Consultant(string m_mission, string p_nom, string p_prenom,string p_mail, string p_departement );
     /*!
      *  \brief Destructeur
      *
@@ -73,7 +73,7 @@ public:
      *
      *  \param m : le nom de la mission 
      */
-    void setMission(std::string m);
+    void setMission(string m_mission);
 
     /*!
      *  \brief Donne la liste des attributs
